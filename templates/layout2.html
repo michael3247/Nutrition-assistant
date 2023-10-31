@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>nutrition assistant</title>
+        <link href="/static/icon.png" rel="icon">
+        <link href="/static/layout2.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Joti One|Hanalei Fill|Goudy Bookletter 1911|Jomhuria|Asset|Russo One|Hammersmith One' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/7cc0998fb0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <div class="banner-i"></div>
+                <div class="banner-l"></div>
+            </div>
+            <div class="profile-ic">
+                <div class="profile-i"><img src="/static/{% block image %}{% endblock %}.png"></div>
+                <div class="profile-n">
+                    <span>Name: {% block name %}{% endblock %}</span>
+                    <span>Username: {% block username %}{% endblock %}</span>
+                </div>
+            </div>
+            <nav>
+                <div class="nav">
+                    <div class="links">
+                        <div id="profile"><span>Profile</span></div>
+                        <div id="logout"><span>Logout</span></div>
+                        <div id="me"><span>Me</span></div>
+                    </div>    
+                    <div class="caret"><i class="fa-solid fa-caret-up fa-bounce"></i></div>
+                </div>
+            </nav>
+
+        </header>
+        <main>{% block main %}{% endblock %}</main>
+        <div class="b-nav">
+            <div class="bs-nav" id="profile">
+                <div><i class="fa-solid fa-shapes"></i></div>
+                <span>profile</span>
+            </div>
+            <div class="bs-nav" id="logout">
+                <div><i class="fa-solid fa-right-from-bracket"></i></div>
+                <span>logout</span>
+            </div>
+            <div class="bs-nav" id="me">
+                <div><i class="fa-solid fa-user"></i></div>
+                <span>me</span>
+            </div>
+        </div>
+    </body>
+    {% block style %}{% endblock %}
+    <script defer src="/static/layout2.js"></script>
+</html>

@@ -1,0 +1,101 @@
+{% extends "layout2.html" %}
+{% block image %}{{ data[0].gender }}{% endblock %}
+{% block name %}{{ data[0].name }}{% endblock %}
+{% block username %}{{ data[0].username }}{% endblock %}
+{% block main %}
+<div>
+    <div class="suggestion">
+        <span>
+            1 glass = 240ml<br><br>
+            It is recommended to take at least {{ volume }} a day
+        </span>
+    </div>
+    <div class="usage">
+        <div>
+            <div class="poor"></div>
+            <span>Poor</span>
+        </div>
+        <div>
+            <div class="average"></div>
+            <span>Average</span>
+        </div>
+        <div>
+            <div class="good"></div>
+            <span>Good</span>
+        </div>
+    </div>
+    <div class="graph">
+        <canvas id="chart"></canvas>
+        <script>
+            const xValues = [];
+            const yValues = [];
+            const barColors = [];
+
+            {% for row in info %}
+            xValues.push("{{ row.date }}")
+            yValues.push("{{row.glass}}")
+            barColors.push("{{ row.color }}")
+            {% endfor %}
+            
+            
+            new Chart("chart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  label: "water intake",
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                title: {
+                  display: true,
+                  text: "track record"
+                }
+              }
+            });
+            </script>
+            <canvas id="chart2"></canvas>
+            <script>
+                const xValues2 = [];
+                const yValues2 = [];
+                const barColors2 = [];
+    
+                {% for row in info %}
+                xValues2.push("{{ row.date }}")
+                yValues2.push("{{row.glass}}")
+                barColors2.push("{{ row.color }}")
+                {% endfor %}
+                
+                
+                new Chart("chart2", {
+                  type: "line",
+                  data: {
+                    labels: xValues2,
+                    datasets: [{
+                      label: "water intake",
+                      backgroundColor: barColors2,
+                      data: yValues2
+                    }]
+                  },
+                  options: {
+                    legend: {display: false},
+                    title: {
+                      display: true,
+                      text: "track record"
+                    }
+                  }
+                });
+                </script>
+    </div>
+</div>
+{% endblock %}
+{% block style %}
+<style>
+    body{
+        background-color: rgb(248, 201, 146);
+    }
+</style>
+{% endblock %}

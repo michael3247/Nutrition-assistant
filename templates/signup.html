@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="signup">
+    <div class="signup-c">
+        <span>Signup</span>
+        <div class="signup-fc">
+            <form method="post" action="/signup">
+                <p>{{ message }}</p>
+                <div class="input">
+                    <input type="text" maxlength="20" required autofocus name="name" placeholder="input name">
+                    <input type="text" maxlength="20" required name="username" placeholder="input username">
+                    <input type="password" maxlength="15" minlength="6" required name="password" placeholder="input password">
+                    <input type="password" maxlength="15" minlength="6" required name="confirm" placeholder="confirm password">
+                    <select name="diet" required>
+                        <option disabled selected>Diet</option>
+                        <option value="Non-vegetarian">Non-vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                    </select>
+                    <select name="gender" required>
+                        <option disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

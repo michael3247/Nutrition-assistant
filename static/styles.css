@@ -1,0 +1,774 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    background-color: black;
+}
+header{
+    background-image: url(bac.png);
+    height:100vh;
+    width:100vw;
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin:0;
+}
+::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;  
+}
+.overlay{
+    height:92vh;
+    width:95vw;
+    background-color: rgba(0, 0, 0, 0.63);
+    border-radius: 2rem;
+    overflow: auto;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 4%;
+}
+.nav1{
+    width:32vw;
+    margin-top: 2.5%;
+    display: block;
+}
+.nav1 a{
+    padding-right: 8%;
+    color: white;
+    font-family:'Inter', sans-serif ;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.nav1 a:hover{
+    color:red;
+    cursor: pointer;
+}
+.logo{
+    aspect-ratio: 1/1;
+    width:4em;
+}
+.fa-solid{
+    font-size: 1.7em;
+    color:white;
+}
+.menu{
+    margin-top: 55%;
+    display:none;
+    cursor: pointer;
+}
+.drop-menu{
+    background-color: black;
+    width:30vw;
+    height:fit-content;
+    flex-direction: column;
+    position: fixed;
+    right:4.7vw;
+    display: none;
+    z-index: 3 !important;
+}
+
+.drop-menu div:nth-of-type(1) .fa-solid{
+    color:red;
+}
+.drop-menu .sub-drop{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    color:white;
+    font-size: 2.3rem;
+    font-family: 'Jomhuria';
+
+}
+.drop-menu .sub-drop div a{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+
+}
+.drop-menu .sub-drop div{
+    border-bottom: 1px solid green;
+    width:100%;
+    display: flex;
+    justify-content: center;
+
+}
+.drop-menu .sub-drop div:hover{
+    background-color:rgb(217, 255, 0);
+
+}
+.intro{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.move{
+    filter: opacity(0);
+    transform: translatey(1em);
+   
+}
+.return{
+    transition: 1s;
+    filter: opacity(0.99);
+    transform: translatey(0em);
+}
+.intro div:nth-of-type(1){
+    font-size: 6.5rem;
+    color:white;
+    font-family: 'Hanalei Fill';
+}
+.intro div:nth-of-type(2){
+    font-size: 3rem;
+    color:white;
+    font-family: 'Great Vibes';
+}
+.intro div:nth-of-type(3){
+    font-size: 3rem;
+    color:white;
+    font-family: 'Goudy Bookletter 1911';
+}
+.intro div:nth-of-type(3) span span{
+    color:rgb(255, 0, 0);
+}
+.button{
+    width:34vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.button button{
+    border: none;
+    width:40%;
+    height:60%;
+    font-size: 2.3rem;
+    font-family: 'Jomhuria';
+    border-radius: 1em;
+    color: white;
+}
+.button button:hover{
+   cursor: pointer;
+}
+.button button:nth-of-type(1){
+    background-color: rgb(4, 81, 4);
+}
+.button button:nth-of-type(1):hover{
+    border:0.05em solid rgb(234, 255, 0);
+}
+.button button:nth-of-type(2){
+    background-color: rgb(234, 255, 0);
+}
+.button button:nth-of-type(2):hover{
+    border:0.05em solid rgb(4, 81, 4);
+}
+.about{
+    width:75vw;
+    height:50vh;
+    background-color: rgb(1, 108, 1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:15vh;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: -3;
+    transform: translatey(-10vw);
+    filter: opacity(0);
+    
+}
+.return2{
+    transform: translateX(0);
+    filter: opacity(1);
+    transition:1s;
+}
+.pefor{
+    width:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pefor div{
+    width:2em;
+    height:2em;
+    background-color:black;
+    border-radius: 50%;
+}
+.title{
+    display:flex;
+    justify-content: center;
+}
+.title span{
+    font-size: 2.2rem;
+    font-family:'Hanalei Fill' ;
+    color:white;
+    margin-top: 2%;
+}
+.content{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+.content span{
+    font-size:1.3rem;
+    font-family: 'Goudy Bookletter 1911';
+    color: white;
+    text-wrap: wrap;
+}
+.features{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 20vh;
+}
+.f-1{
+    display:flex;
+    flex-direction: row;
+    width:100vw;
+    
+}
+.f-2{
+    display:flex;
+    flex-direction: row;
+    width:100vw;
+    margin-top: 10%;
+    margin-bottom: 10%;
+   
+}
+.f-2 div:nth-of-type(2){
+    width:60%;
+    display:flex;
+    flex-direction: row;
+}
+.f-2 div:nth-of-type(1){
+    width:40%;
+}
+.f-1 div:nth-of-type(1){
+    width:60%;
+    display:flex;
+    flex-direction: row;
+}
+.f-1 div:nth-of-type(2){
+    width:40%;
+}
+.txt-1{
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.cont-1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+}
+.cont-a1{
+   transform: translateX(-55vw);
+   opacity: 0;
+}
+.reverse{
+    transform: translateX(0);
+    transition: 1s;
+    opacity: 0.99;
+}
+.cont-a2{
+    width:20em;
+    margin-left: 55vw;
+    opacity: 0;
+ }
+.reverse2{
+    margin-left: 0;
+    transition-property: opacity, margin-left;
+    transition-duration: 1.4s, 0.5s;
+    opacity: 0.99;
+}
+.cont-a3{
+    transform: translateX(-55vw);
+    opacity: 0;
+ }
+.reverse3{
+    transform: translateX(0);
+    transition: 1s;
+    opacity: 0.99;
+}
+
+.cont-1 span:nth-of-type(1){
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+.cont-1 span:nth-of-type(2){
+    font-size: 1.14rem;
+    font-family: 'Goudy Bookletter 1911';
+}
+.img-size{
+    aspect-ratio: 1/1;
+    width:60%;
+    margin-left: 20%;
+}
+.ani-1{
+    animation: rotate 7s linear 2s infinite;
+}
+.sha-1{
+    position:relative;
+    background-color: red;
+    width:1px !important;
+    left:18vw;
+    top:8rem;
+    height:1px;
+    z-index:-1;
+    box-shadow: 1px 1px 200px 60px red;
+}
+.sha-2{
+    position:relative;
+    background-color: green;
+    width:1px !important;
+    left:18vw;
+    top:8rem;
+    height:1px;
+    z-index:-1;
+    box-shadow: 1px 1px 200px 60px green;
+}
+.sha-3{
+    position:relative;
+    background-color:yellow;
+    width:1px !important;
+    left:18vw;
+    top:8rem;
+    height:1px;
+    z-index:-1;
+    box-shadow: 1px 1px 200px 40px yellow;
+}
+.ani-2{
+    animation: zoom 0.6s linear 2s infinite alternate;
+}
+@keyframes rotate{
+    0%{
+        transform: rotatex(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes zoom{
+    100%{
+       transform: scale(1.1);
+    }
+}
+.img-size:nth-of-type(2){
+    aspect-ratio: 1/1;
+    width:60%;
+    margin-right: 20%;
+    margin-bottom: 80vh;
+}
+.no span{
+    background-color: red;
+    color: black;
+    width: 0.8em;
+    height:0.8em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    font-family: 'Jomhuria';
+}
+.green span{
+    background-color: green;
+}
+.yellow span{
+    background-color: rgb(222, 240, 22);
+}
+.b-1 button{
+    width:40%;
+    border:none;
+    border-radius: 1.2rem;
+    font-size: 2rem;
+    font-family: 'Jomhuria';
+    color:white;
+    margin-top: 3%;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+
+}
+.b-1 button::before{
+    content: "";
+    position: absolute;
+    width:0;
+    height: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    z-index: -1;
+    transition: 1s;
+}
+.red button:hover::before{
+    background-color: red;
+    width:100%;
+    transition:1s;
+}
+.red button{
+    border: 0.1rem solid red;
+}
+.green button:hover::before{
+    background-color: green;
+    width:100%;
+    transition:1s;
+}
+.green button{
+    border:0.1rem solid green;
+}
+.yellow button:hover::before{
+    background-color: yellow;
+    width:100%;
+    transition:1s;
+}
+.yellow button{
+    border: 0.1rem solid yellow;
+}
+footer{
+    width:100vw;
+    height:fit-content;
+    background:green;
+    text-align: center;
+    margin-top: 10vh;
+    
+}
+
+
+
+
+
+@media(max-width:1089px){
+    .nav1{
+        display: none;
+    }
+    .menu{
+        display:block;
+    }
+    .drop-menu{
+        display: none;
+    }
+}
+
+
+@media(max-width:886px){
+    .button{
+        width:43vw;
+    }
+    .button button{
+        width:45%;
+        height:100%;
+    }
+    .about{
+        height:55vh;
+    }
+    .cont-1 span:nth-of-type(1){
+        font-size: 1.7rem;
+    }
+    .cont-1 span:nth-of-type(2){
+        font-size: 1.17rem;
+    }
+    .b-1 button{
+        width:55%;
+    }
+}
+
+@media(max-width:643px){
+    .intro div:nth-of-type(1){
+        font-size: 6rem;
+    }
+    .intro div:nth-of-type(2){
+        font-size: 2.5rem;
+        color:white;
+        font-family: 'Great Vibes';
+    }
+    .intro div:nth-of-type(3){
+        font-size: 2.5rem;
+        color:white;
+        font-family: 'Goudy Bookletter 1911';
+    }
+    .about{
+        height:75vh;
+    }
+    .img{
+        display: none;
+    }
+    .f-1{
+        justify-content: center;
+    }
+    .f-2{
+        justify-content: center;
+    }
+    .cont-1{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+    }
+    .b-1 button{
+        width:65%;
+    }
+}
+
+
+@media(min-height:820px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:5.5em;
+    }
+    .fa-solid{
+        font-size: 2em;
+    }
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop{
+        font-size: 2.6rem;
+    
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding:0.3em;
+    
+    }
+    .intro div:nth-of-type(1){
+        font-size: 7.2rem;
+        padding-top: 5%;
+    }
+    .intro div:nth-of-type(2){
+        font-size: 3.5rem;
+        margin-top: 10%;
+    }
+    .intro div:nth-of-type(3){
+        font-size: 3.8rem;
+        margin-top: 10%;
+    }
+    .button{
+        width:70vw;
+    }
+    .button button{
+        font-size: 4.5rem;
+    }
+}
+
+
+
+@media(min-height:1000px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:6.5em;
+    }
+    .fa-solid{
+        font-size: 3em;
+    }
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop{
+        font-size: 3rem;
+    
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding:0.7em;
+    
+    }
+    .intro div:nth-of-type(1){
+        font-size: 7.2rem;
+        margin-top: 16%;
+        padding-top: 0%;
+    }
+    .intro div:nth-of-type(2){
+        font-size: 3.5rem;
+        margin-top: 8%;
+    }
+    .intro div:nth-of-type(3){
+        font-size: 3.8rem;
+        margin-top: 10%;
+    }
+    .button{
+        width:70vw;
+        margin-top: 13%;
+        padding-top: 0%;
+    }
+    .button button{
+        font-size: 4.5rem;
+    }
+    .about{
+        height:40vh;
+    }
+    .title span{
+        font-size: 3.2rem;
+        margin-top: 4%;
+    }
+    .content span{
+        font-size:1.85rem;
+    }
+    .cont-1 span:nth-of-type(1){
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    .cont-1 span:nth-of-type(2){
+        font-size: 1.4rem;
+        font-family: 'Goudy Bookletter 1911';
+    }
+}
+
+
+@media(max-width:573px){
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding-top: 0.5em;
+    
+    }
+    .intro div:nth-of-type(1){
+        font-size: 4.7rem;
+        margin-top: 10%;
+    }
+    .intro div:nth-of-type(2){
+        font-size: 2.5rem;
+        margin-top: 4%;
+    }
+    .intro div:nth-of-type(3){
+        font-size: 2.5rem;
+        margin-top: 10%;
+    }
+    .button{
+        width:75vw;
+        margin-top: 13%;
+    }
+    .button button{
+        font-size: 2.4rem;
+        padding-top:0.2em;
+        padding-bottom: 0.2em;
+    }
+    .about{
+        height:55vh;
+    }
+    .features{
+        margin-top: 17vh;
+    }
+    .f-1 div:nth-of-type(1){
+        width:80%;
+    }
+    .f-2 div:nth-of-type(2){
+        width:80%;
+    }
+    .b-1 button{
+        width:75%;
+    
+    }
+    .b-1{
+        padding-top: 1vh;
+    }
+}
+
+
+
+
+@media(max-width:386px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:3em;
+    }
+    .drop-menu .sub-drop{
+        font-size: 1.7rem;
+    
+    }
+    .intro div:nth-of-type(1){
+        font-size: 4rem;
+    }
+    .intro div:nth-of-type(2){
+        font-size: 2rem;
+    }
+    .intro div:nth-of-type(3){
+        font-size: 2rem;
+    }
+    .button{
+        width:85vw;
+    }
+    .button button{
+        font-size: 2rem;
+    }
+    .about{
+        height:70vh;
+        
+    }
+    .title span{
+        font-size: 1.8rem;
+    }
+    .content span{
+        font-size:1.05rem;
+    }
+    .cont-1 span:nth-of-type(1){
+        font-size: 1.6rem;
+    }
+    .cont-1 span:nth-of-type(2){
+        font-size: 1.1rem;
+    }
+    .b-1 button{
+        width:85%;
+    }
+}
+
+
+@media(min-width:1364px){
+    .intro{
+        padding-top: 10vh;
+    }
+    .intro div:nth-of-type(1){
+        font-size: 7rem;  
+    }
+    .intro div:nth-of-type(2){
+        font-size: 3.2rem;
+    }
+    .intro div:nth-of-type(3){
+        font-size: 3.5rem;
+    }
+    .button{
+        width:35vw;
+        margin-top: 5%;
+    }
+    .button button{
+        width:40%;
+        height:60%;
+        font-size: 3rem;
+    }
+    .about{
+        height:40vh;
+        
+    }
+    .title span{
+        font-size: 2.4rem;
+    }
+    .content span{
+        font-size:1.5rem;
+    }
+    .cont-1 span:nth-of-type(1){
+        font-size: 2rem;
+        padding-bottom: 2%;
+    }
+    .cont-1 span:nth-of-type(2){
+        font-size: 1.3rem;
+    }
+    .b-1{
+        padding-top: 2%;
+    }
+    
+}

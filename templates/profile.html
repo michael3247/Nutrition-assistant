@@ -1,0 +1,48 @@
+{% extends "layout2.html" %}
+{% block image %}{{ data[0].gender }}{% endblock %}
+{% block name %}{{ data[0].name }}{% endblock %}
+{% block username %}{{ data[0].username }}{% endblock %}
+{% block main %}
+<div class="main">
+    <div class="tips">
+        <span>Tip for the day:</span><br>
+            {{ tip[0].tip }}
+    </div>
+    <div class="f-1" id="meal">
+        <div class="w-m"><div></div></div>
+        <div class="wi-cont dark1">
+            <div><span>Get a meal suggestion</span></div>
+            <div class="reduce"><span>Click to get your meal suggestion for today </span></div>
+        </div>
+    </div>
+    <div class="f-2" id="search">
+        <div class="w-m2"><div></div></div>
+        <div class="wi-cont dark2">
+            <div><span>Recipie search</span></div>
+            <div class="reduce"><span>Search for recipies by inputing name of dish or calorie range </span></div>
+        </div>
+    </div>
+    <div class="f-3">
+        <div class="w-m3"><div></div></div>
+        <div class="wi-cont dark3" id="tracker" >
+            <span>Track water intake</span>
+            <div class="wi-m">
+                <form action="/minus">
+                    <button type="submit" id="plus">-</button>
+                </form>
+                <span>{{ graph[0].glass }}<span class="glass">glass{{ form }}</span></span>
+                <form action="/plus">
+                    <button type="submit" id="minus">+</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block style %}
+<style>
+    body{
+        background-color: rgb(62, 30, 19);
+    }
+</style>
+{% endblock %}

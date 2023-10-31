@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="login">
+    <div class="login-c">
+        <div class="log-img"></div>
+        <div class="log-s">
+            <span>Login</span>
+            <div class="login-fc">
+                <form action="/login" method="post" class="login-f">
+                    <p>{{ message }}</p>
+                    <input type="text" maxlength="20" required name="username" placeholder="input username" autofocus>
+                    <input type="password" maxlength="15" required name="password" placeholder="input password">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

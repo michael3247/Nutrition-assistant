@@ -1,0 +1,37 @@
+{% extends "layout2.html" %}
+{% block image %}{{ data[0].gender }}{% endblock %}
+{% block name %}{{ data[0].name }}{% endblock %}
+{% block username %}{{ data[0].username }}{% endblock %}
+{% block main %}
+<div class="search-m">
+    {% for i in meal %}
+    <div class="meal-ms result-c">
+        <div class="result-i" style="background-image: url({{ i.recipe.image }});"></div>
+        <div class="meal-label">
+            <span class="result-t">{{ i.recipe.label }}</span>
+            <div class="label"><span><b>Diet_label:</b>
+                {% for j in i.recipe.dietLabels %}
+                {{ j }}
+                {% endfor %}
+            </span></div>
+            <div class="label"><span><b>Health_label:</b>
+                {% for j in i.recipe.healthLabels %}
+                {{ j }}
+                {% endfor %}</span></div>
+            <div class="label"><span><b>Caution:</b>
+                {% for j in i.recipe.cautions %}
+                {{ j }}
+                {% endfor %}</span></div>
+            <span class="meal-l"><a href="{{ i.recipe.url }}">preparation guide</a></span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block style %}
+<style>
+    body{
+        background-color: rgb(217, 219, 157);
+    }
+</style>
+{% endblock %}

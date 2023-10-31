@@ -1,0 +1,457 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    overflow: hidden;
+    background-color: black;
+}
+header{
+    height:100vh;
+    width:100vw;
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin:0;
+}
+.bac{
+    height: 100vh;
+    width:100vw;
+    z-index: -1;
+    object-fit: cover; 
+    object-position: center center;
+    position: fixed;
+    filter: blur(2px);
+}
+::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;  
+}
+.overlay{
+    height:100vh;
+    width:100vw;
+    background-color: rgba(0, 0, 0, 0.63);
+    overflow: auto;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 4%;
+}
+.nav1{
+    width:32vw;
+    margin-top: 2.5%;
+    display: block;
+}
+.nav1 a{
+    padding-right: 8%;
+    color: white;
+    font-family:'Inter', sans-serif ;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.nav1 a:hover{
+    color:red;
+    cursor: pointer;
+}
+.logo{
+    aspect-ratio: 1/1;
+    width:4em;
+}
+.fa-solid{
+    font-size: 1.7em;
+    color:white;
+}
+.menu{
+    margin-top: 55%;
+    display:none;
+    cursor: pointer;
+}
+.drop-menu{
+    background-color: black;
+    width:30vw;
+    height:fit-content;
+    flex-direction: column;
+    position: fixed;
+    right:4.7vw;
+    display: none;
+    z-index: 3 !important;
+}
+
+.drop-menu div:nth-of-type(1) .fa-solid{
+    color:red;
+}
+.drop-menu .sub-drop{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    color:white;
+    font-size: 2.3rem;
+    font-family: 'Jomhuria';
+
+}
+.drop-menu .sub-drop div a{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+
+}
+.drop-menu .sub-drop div{
+    border-bottom: 1px solid green;
+    width:100%;
+    display: flex;
+    justify-content: center;
+
+}
+.drop-menu .sub-drop div:hover{
+    background-color:rgb(217, 255, 0);
+
+}
+
+footer{
+    width:100vw;
+    height:fit-content;
+    background:green;
+    text-align: center;
+    margin-top: 10vh;
+    
+}
+
+/*for the login*/
+.login{
+   margin-top: 3%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.login-c{
+    width:50vw;
+    height:20em;
+    display: flex;
+    flex-direction: row;
+    min-height: fit-content;
+}
+.login-c .log-img{
+    width:45%;
+    background-image: url(/static/bac.png);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+.log-s{
+    width:55%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-c .log-s span{
+    color: white;
+    font-size: 2.6rem;
+    font-family: 'Hanalei Fill';
+}
+.login-fc{
+    display: flex;
+    background-image: none;
+    flex-direction: column;
+    text-align: center;
+   
+}
+.login-f input{
+    width:70%;
+    height:20%;
+    margin-top:7% ;
+}
+.login-f input[type="submit"]{
+    margin-top: 20%;
+    color: white;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+}
+.login-f input[type="submit"]:hover{
+
+    border: 1px solid yellow;
+}
+
+/*signup*/
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-c{
+    width:60vw;
+    background-color: black;
+    height: 24em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-c span{
+    color: white;
+    font-size: 2.6rem;
+    font-family: 'Hanalei Fill';
+}
+.signup-fc{
+   display: flex;
+   align-items: center;
+   text-align: center;
+}
+form .input{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+form input, form select{
+    width:40%;
+    height:2.5em;
+    margin-left: 3%;
+    margin-top: 4%;
+
+}
+form select{
+    background-color: green;
+    color: white;
+    border: none;
+}
+form select option:hover {
+    background-color: yellow;
+}
+.signup-fc input[type="submit"]{
+    margin-top: 8%;
+    background-color: green;
+    border: none;
+    color: white;
+}
+.signup-fc input[type="submit"]:hover{
+    border:1px solid yellow;
+}
+form p{
+    color: rgb(255, 0, 0);
+    font-size: 0.9rem;
+}
+
+
+
+@media(max-width:1089px){
+    .nav1{
+        display: none;
+    }
+    .menu{
+        display:block;
+    }
+    .drop-menu{
+        display: none;
+    }
+}
+
+
+@media(max-width:886px){
+    .login-c{
+        height:16em;
+    }
+    .login-f input{
+        width:70%;
+        height:20%;
+        margin-top:8% ;
+    }
+    /*signup*/
+    .signup-c{
+        height:32em;
+    }
+    form input, form select{
+        width:63%;
+        height:2.5em;
+        margin-top: 5%;
+    
+    }
+    .signup-fc input[type="submit"]{
+        margin-top: 10%;
+    }
+}
+
+@media(max-width:643px){
+    .login-c{
+        height:15em;
+    }
+    .login-f input{
+        width:70%;
+        height:20%;
+        margin-top:8.4% ;
+    }
+}
+
+
+@media(min-height:820px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:5.5em;
+    }
+    .fa-solid{
+        font-size: 2em;
+    }
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop{
+        font-size: 2.6rem;
+    
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding:0.3em;
+    
+    }
+    
+    
+}
+
+
+
+@media(min-height:1000px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:6.5em;
+    }
+    .fa-solid{
+        font-size: 3em;
+    }
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop{
+        font-size: 3rem;
+    
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding:0.7em;
+    
+    }
+    /*for login*/
+    .login-c{
+        width:55vw;
+        height:33em;
+    }
+    .login{
+        margin-top: 8%;
+     }
+    .log-img{
+        display: none;
+    }
+    .log-s{
+        width:100%;
+    }
+    .login-c .log-s span{
+        padding-top: 2%;
+        color: white;
+        font-size: 3rem;
+        font-family: 'Hanalei Fill';
+    }
+    .login-f input{
+        width:75%;
+        height:20%;
+        margin-top:9% ;
+    }
+    .signup{
+        margin-top: 10%;
+    }
+    .signup-c{
+        width:60vw;
+        height: 50em;
+    }
+    .signup-c span{
+        padding-top: 2%;
+        font-size: 2.8rem;
+    }
+    form input, form select{
+        width:70%;
+        height:3.7em;
+        margin-left: 3%;
+        margin-top: 9%;
+    
+    }
+    .signup-fc input[type="submit"]{
+        margin-top: 20%;
+    }
+}
+
+
+@media(max-width:573px){
+    .drop-menu{
+        width:40vw;
+    }
+    .drop-menu .sub-drop div{
+        border-bottom: 1px solid green;
+        padding-top: 0.5em;
+    
+    }
+    .login-c{
+        width:70vw;
+        height:23em;
+    }
+    .login-c .log-img{
+        width:45%;
+        display: none;
+    }
+    .log-s{
+        width:100%;
+    }
+    .signup-c{
+        width:70vw;
+        height: 35em;
+    }
+    form input, form select{
+        width:75%;
+        height:2.5em;
+        margin-top: 9%;
+    }
+    .signup-fc input[type="submit"]{
+        margin-top: 20%;
+    }
+}
+
+
+
+
+
+@media(max-width:386px){
+    .logo{
+        aspect-ratio: 1/1;
+        width:3em;
+    }
+    .drop-menu .sub-drop{
+        font-size: 1.7rem;
+    
+    }
+    
+}
+
+
+@media(min-width:1364px){
+    .login{
+        margin-top: 7%;
+    }
+     .login-c{
+        height:25em;
+    }
+    .signup{
+        margin-top: 7%;
+    }
+    form input, form select{
+        width:47%;
+    
+    }
+}

@@ -1,0 +1,34 @@
+{% extends "layout2.html" %}
+{% block image %}{{ data[0].gender }}{% endblock %}
+{% block name %}{{ data[0].name }}{% endblock %}
+{% block username %}{{ data[0].username }}{% endblock %}
+{% block main %}
+    <div class="me-m">
+        <div class="me-ms">
+            <span class="bolder"><b>Account Details</b></span>
+            <div><span><b>Name:</b> {{ data[0].name }}</span></div>
+            <div><span><b>Username:</b> {{ data[0].username }}</span></div>
+            <div><span><b>Diet:</b> {{ data[0].diet }}</span></div>
+            <div><span><b>Gender:</b> {{ data[0].gender }}</span></div>
+        </div>
+        <div class="me-ms">
+            <span class="bolder"><b>Account Control</b></span>
+            <div>
+                <form action="/changen" method="post">
+                    <span class="remove">Change name:</span><br>
+                    <input type="text" placeholder=" input new name" name="newn" required>
+                    <button type="submit" class="remove edit">Change name</button>
+                </form>
+            </div>
+            <div><a class="remove" href="/logout">logout</a></div>
+            <div><form id="postForm" action="/delete" method="post"><a id="delete" class="red">delete account</a></form></div>
+        </div>
+    </div>
+{% endblock %}
+{% block style %}
+<style>
+    body{
+        background-color: rgb(255, 213, 213);
+    }
+</style>
+{% endblock %}

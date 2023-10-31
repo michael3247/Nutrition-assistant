@@ -1,0 +1,89 @@
+{% extends "layout2.html" %}
+{% block image %}{{ data[0].gender }}{% endblock %}
+{% block name %}{{ data[0].name }}{% endblock %}
+{% block username %}{{ data[0].username }}{% endblock %}
+{% block main %}
+<div class="search-m">
+    <div class="search-c">
+        <span>search for recipes by dish name or nutritional  range</span>
+        <div class="search-i">
+            <form method="post" action="/search">
+                <input type="text" placeholder="  input dish......" name="dish">
+                <button type="submit">Go</button>
+            </form>
+        </div>
+        <span>keyword = “{{ query }}”</span>
+    </div>
+    {% for i in recipes %}
+    <div class="result-c">
+        <div class="result-cs">
+            <div class="result-i" style="background-image: url({{ i.recipe.image }});"></div>
+            <div class="result-l">
+                <span class="result-t">{{ i.recipe.label }}</span>
+                <div class="label"><span><b>Diet_label:</b>
+                    {% for j in i.recipe.dietLabels %}
+                    {{ j }}
+                    {% endfor %}
+                </span></div>
+                <div class="label"><span><b>Health_label:</b>
+                    {% for j in i.recipe.healthLabels %}
+                    {{ j }}
+                    {% endfor %}</span></div>
+                <div class="label"><span><b>Caution:</b>
+                    {% for j in i.recipe.cautions %}
+                    {{ j }}
+                    {% endfor %}</span></div>
+            </div>
+        </div>
+        <div class="ing-c">
+            <span class="result-t">Ingredients</span>
+            <div class="label"><span>
+                {% for j in i.recipe.ingredientLines %}
+                    . {{ j }}<br>
+                {% endfor %}
+            </span></div>
+            <div class="ing-cs">
+                {% for j in i.recipe.ingredients %}
+                <div><span>
+                    {{ j.text }}<br>
+                    {{ j.quantity }}<br>
+                    {{ j.measure }}<br>
+                    {{ j.food }}<br>
+                    {{ j.weight }}<br>
+                    {{ j.foodCategory }}<br>
+                </span></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="nutri">
+            <div class="nutri-c"><span>Calories:{{ i.recipe.calories }}kcal</span></div>
+            <div>
+                <div class="nutri-t">
+                    <span>Nutritional Value</span>
+                    <span>Amount</span>
+                </div>
+                {% for j in i.recipe.digest %}
+                <div class="nutri-m">
+                    <span>{{ j.label }}: </span>
+                    <span>{{ j.total}}{{ j.unit}}</span>
+                </div>
+                {% for k in j.sub %}
+                <div class="nutri-s">
+                    <span>{{ k.label }}: </span>
+                    <span>{{ k.total }}{{ k.unit }}</span>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block style %}
+<style>
+    body{
+        background-color: rgb(196, 225, 182);
+    }
+</style>
+{% endblock %}
