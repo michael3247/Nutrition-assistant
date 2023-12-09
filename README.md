@@ -1,4 +1,6 @@
 # **Nutrition assistant**
+<img src="https://res.cloudinary.com/dufdl1zxp/image/upload/v1702123395/give-me-an-onion-and-tomato-logo_1_wzn4b3.png" height="80" width="80" align="center">
+
 #### Description: Nutrition assistant is an app built to aid the daily nutritional lives of users.
 
 ## Languages;
