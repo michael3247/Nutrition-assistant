@@ -97,4 +97,4 @@ This suggests meals to the user based on the data inputed on signup, It also pro
 This feature allows users to search for recipies based on the meal name, calorie range or diet preference, it outputs varieties of results each have health_labels, caution, diet_labels, ingredients and nutritional value. This was also implemented using ***edmam API***.
 
 ### Water intake tracker:
-This feature helps users travk their water intake, it also provides a graph/chart where users can view their water intake trend, this chart was implemented with ***chart.js***
+This feature helps users track their water intake, it also provides a graph/chart where users can view their water intake trend, this chart was implemented with ***chart.js***
